@@ -34,10 +34,10 @@ client.on("message", message => {
   if(message.content.startsWith(prefix + "shoot")) {
   if(message.mentions.users.size === 1) {
   message.channel.send(`Shots fired! ${message.mentions.users.first()} has taken a bullet to the ${bodylist[randomBodyPart]}!`)
-}
-else {
+  }
+  else {
   message.channel.send("Please mention a single user to shoot.").catch(console.error);
-}
+  }
   }
 
   if (message.content.startsWith(prefix + "add")) {
