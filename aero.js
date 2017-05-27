@@ -29,6 +29,14 @@ client.on("message", message => {
   message.channel.send("Ping?").then(m => m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms.`) );
   }
 
+  if(message.content.startsWith(prefix + "shoot")) {
+  if(message.mentions.users.size === 1) {
+  message.channel.send(`Shots fired! ${message.mentions.users.first()} has taken a bullet to the chest!`);
+} else {
+  message.channel.send("Please mention a single user to shoot.").catch(console.error);
+}
+  }
+
   if (message.content.startsWith(prefix + "add")) {
       let numArray = args.map(n=> parseInt(n));
       let total = numArray.reduce( (p, c) => p+c);
@@ -74,7 +82,7 @@ client.on("message", message => {
     if (message.content.startsWith(prefix + "say")) {
       message.delete();
         if(message.member.roles.has(modRole.id)) {
-         message.channel.send(args.join(" "));
+         message.channel.send(argresult);
         } else {
             message.channel.send("You are not authorized to use this command. :slight_frown:").catch(console.error);
         }
