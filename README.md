@@ -22,4 +22,4 @@ An open source Discord bot developed in JavaScript using the discord.js library!
 
 ```$unban [userID]```: Unbans userID pasted. You need to go to your Discord Settings, go to Appearance, and turn on Developer mode. Then, go to your Server Settings, go to Bans, right click on the name of the user you want unbanned, and click ```Copy ID```. Then do ```$unban [userID]``` and the user will be unbanned.
 
-```$shoot @user```: Shoots a user. If headshot, kills the user.
+```$shoot @user```: Shoots a user. It picks a random body part to shoot the user in, the options are chest, foot, leg, head, arm, stomach, and heart. If the user gets shot in the heart or the head, the bot will output ```Man down!```. It can be used to just poke fun around or to bother your friend, or you can treat it like a game! First person to get shot in the head or the heart loses. It is up to the user. The ```Police``` rank is required for this so only policemen/policewomen can shoot people. Makes sense.
