@@ -24,6 +24,8 @@ client.on("message", message => {
   if (message.author.bot) return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(" ");
+  var bodylist = ['chest','foot','leg', 'head', 'arm', 'stomach', 'heart'];
+  var randomBodyPart = Math.floor(Math.random()*bodylist.length);
 
   if(message.content === (prefix + "ping")) {
   message.channel.send("Ping?").then(m => m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms.`) );
@@ -31,8 +33,9 @@ client.on("message", message => {
 
   if(message.content.startsWith(prefix + "shoot")) {
   if(message.mentions.users.size === 1) {
-  message.channel.send(`Shots fired! ${message.mentions.users.first()} has taken a bullet to the chest!`);
-} else {
+  message.channel.send(`Shots fired! ${message.mentions.users.first()} has taken a bullet to the ${bodylist[randomBodyPart]}!`)
+}
+else {
   message.channel.send("Please mention a single user to shoot.").catch(console.error);
 }
   }
