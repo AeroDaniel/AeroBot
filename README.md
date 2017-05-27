@@ -21,3 +21,5 @@ An open source Discord bot developed in JavaScript using the discord.js library!
 ```$ban @user```: Bans user mentioned - assuming only 1 user is mentioned. Requires "Moderator" role.
 
 ```$unban [userID]```: Unbans userID pasted. You need to go to your Discord Settings, go to Appearance, and turn on Developer mode. Then, go to your Server Settings, go to Bans, right click on the name of the user you want unbanned, and click ```Copy ID```. Then do ```$unban [userID]``` and the user will be unbanned.
+
+```$shoot @user```: Shoots the target user. If headshot, kills the user.
