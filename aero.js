@@ -99,7 +99,6 @@ client.on("message", message => {
 
 
     if (message.content.startsWith(prefix + "say")) {
-      message.delete();
         if(message.member.roles.has(modRole.id)) {
          message.channel.send(argresult);
         } else {
