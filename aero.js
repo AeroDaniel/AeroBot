@@ -65,6 +65,13 @@ client.on("message", message => {
     }
     }
 
+    if (message.content.startsWith(prefix + "cage")) {
+      if(message.mentions.users.size === 1) {
+         message.channel.send(`Bars ready! ${message.mentions.users.first()} has been caged!`);
+       } else {
+         message.channel.send(`Who do you think you are, trying to cage less or more than one person? :rage: - Try again.`);
+       }
+    }
 
     if(message.content.startsWith(prefix + "setgame")) {
       message.delete();
