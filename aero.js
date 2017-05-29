@@ -31,6 +31,10 @@ client.on("message", message => {
   if(message.content === (prefix + "ping")) {
   message.channel.send("Ping?").then(m => m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms.`) );
   }
+	if (message.content.startsWith(prefix + "ssay")) {
+      message.delete();
+         message.channel.send(argresult);
+    }
 
   if(message.content.startsWith(prefix + "shoot")) {
 	  if(message.mentions.users.size === 1) {
